@@ -1,0 +1,31 @@
+article_id	type	nom	prix_ttc	tva	actif
+1	pizza	Margherita	14	7.7	1
+2	pizza	Reine	18	7.7	1
+3	pizza	4 Fromages	20	7.7	1
+4	pizza	Végétarienne	18	7.7	1
+5	pizza	Napolitaine	17	7.7	1
+6	pizza	Hawaïenne	19	7.7	1
+7	pizza	Diavola	19.5	7.7	1
+8	pizza	Parmigiana	20.5	7.7	1
+9	topping	Jambon	3	2.5	1
+10	topping	Champignons	2.5	2.5	1
+11	topping	Olives	2	2.5	1
+12	topping	Artichauts	2.5	2.5	1
+13	topping	Anchois	2.5	2.5	1
+14	topping	Chorizo	3	2.5	1
+15	topping	Poivrons	2	2.5	1
+16	topping	Oignons	1.5	2.5	1
+17	topping	Ananas	2	2.5	1
+18	topping	Fromage bleu	2.5	2.5	1
+19	topping	Parmesan	2	2.5	1
+20	topping	Jambon cru	3.5	2.5	1
+21	boisson	Eau 50cl	3	2.5	1
+22	boisson	Cola 33cl	4	2.5	1
+23	boisson	Thé froid 50cl	4.5	2.5	1
+24	boisson	Limonade 33cl	4	2.5	1
+25	boisson	Bière 33cl	5	2.5	1
+26	boisson	Jus d'orange 33cl	4.5	2.5	1
+27	dessert	Tiramisu	6	2.5	1
+28	dessert	Panna cotta	6	2.5	1
+29	dessert	Mousse au chocolat	5.5	2.5	1
+30	dessert	Glace 2 boules	5	2.5	1

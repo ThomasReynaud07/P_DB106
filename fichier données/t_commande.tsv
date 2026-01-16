@@ -1,0 +1,551 @@
+commande_id	client_fk	type	adresse_fk	date_creation	statut
+1	118	sur_place		15.01.2025 16:11	livrée
+2	193	emporter		15.01.2025 17:03	livrée
+3	75	sur_place		15.01.2025 18:53	livrée
+4	213	emporter		15.01.2025 22:00	livrée
+5	204	sur_place		15.01.2025 22:09	livrée
+6	110	emporter		15.01.2025 23:17	livrée
+7	24	livraison	28	16.01.2025 01:22	annulée
+8	157	livraison	194	16.01.2025 05:14	livrée
+9	36	emporter		16.01.2025 13:18	livrée
+10	153	emporter		16.01.2025 15:37	livrée
+11	16	livraison	20	16.01.2025 17:35	livrée
+12	217	emporter		16.01.2025 18:21	livrée
+13	43	sur_place		16.01.2025 21:00	livrée
+14	15	sur_place		16.01.2025 21:30	livrée
+15	108	emporter		16.01.2025 22:57	livrée
+16	73	livraison	94	16.01.2025 23:54	livrée
+17	7	emporter		17.01.2025 01:05	livrée
+18	61	sur_place		17.01.2025 01:20	livrée
+19	112	livraison	141	17.01.2025 05:50	livrée
+20	219	emporter		17.01.2025 12:34	livrée
+21	210	livraison	259	17.01.2025 14:36	annulée
+22	51	livraison	64	17.01.2025 15:03	livrée
+23	48	emporter		17.01.2025 17:14	livrée
+24	92	sur_place		18.01.2025 01:27	livrée
+25	41	emporter		18.01.2025 01:33	livrée
+26	180	sur_place		18.01.2025 04:22	livrée
+27	206	livraison	255	18.01.2025 11:53	livrée
+28	144	livraison	181	18.01.2025 12:42	livrée
+29	208	livraison	257	18.01.2025 17:15	livrée
+30	43	livraison	55	18.01.2025 19:34	livrée
+31	42	livraison	53	19.01.2025 00:38	livrée
+32	25	emporter		19.01.2025 01:10	livrée
+33	170	emporter		19.01.2025 01:37	livrée
+34	139	sur_place		19.01.2025 03:34	livrée
+35	45	livraison	57	19.01.2025 04:37	livrée
+36	108	emporter		19.01.2025 04:38	livrée
+37	102	livraison	130	19.01.2025 06:22	livrée
+38	166	emporter		19.01.2025 08:55	livrée
+39	130	sur_place		19.01.2025 10:34	livrée
+40	62	sur_place		19.01.2025 11:19	livrée
+41	57	livraison	72	19.01.2025 11:20	livrée
+42	182	livraison	222	19.01.2025 13:40	livrée
+43	17	emporter		19.01.2025 13:44	livrée
+44	147	livraison	184	19.01.2025 14:00	livrée
+45	186	livraison	228	19.01.2025 14:50	livrée
+46	175	sur_place		19.01.2025 15:01	livrée
+47	46	emporter		19.01.2025 16:42	livrée
+48	96	livraison	121	19.01.2025 19:24	livrée
+49	77	livraison	98	19.01.2025 21:37	livrée
+50	130	emporter		19.01.2025 23:25	livrée
+51	178	livraison	218	19.01.2025 23:56	annulée
+52	54	livraison	67	20.01.2025 02:06	livrée
+53	174	emporter		20.01.2025 04:44	livrée
+54	117	emporter		20.01.2025 04:48	livrée
+55	47	livraison	59	20.01.2025 05:53	livrée
+56	135	livraison	169	20.01.2025 09:32	livrée
+57	130	livraison	163	20.01.2025 10:06	livrée
+58	191	livraison	235	20.01.2025 11:20	livrée
+59	197	livraison	244	20.01.2025 12:48	livrée
+60	127	emporter		20.01.2025 14:26	livrée
+61	169	sur_place		20.01.2025 15:08	livrée
+62	100	livraison	127	20.01.2025 15:37	livrée
+63	132	emporter		20.01.2025 18:25	livrée
+64	83	livraison	104	20.01.2025 18:25	livrée
+65	69	livraison	89	20.01.2025 23:41	livrée
+66	100	sur_place		20.01.2025 23:46	livrée
+67	155	emporter		21.01.2025 00:05	livrée
+68	40	livraison	51	21.01.2025 01:05	livrée
+69	138	sur_place		21.01.2025 02:13	livrée
+70	83	sur_place		21.01.2025 03:15	livrée
+71	54	livraison	68	21.01.2025 04:19	livrée
+72	184	emporter		21.01.2025 21:22	livrée
+73	159	emporter		21.01.2025 23:03	livrée
+74	101	livraison	128	22.01.2025 00:51	livrée
+75	141	livraison	177	22.01.2025 01:35	livrée
+76	205	sur_place		22.01.2025 02:04	livrée
+77	61	emporter		22.01.2025 03:37	livrée
+78	44	emporter		22.01.2025 04:45	livrée
+79	138	emporter		22.01.2025 05:09	livrée
+80	10	sur_place		22.01.2025 06:03	livrée
+81	158	livraison	195	22.01.2025 06:27	livrée
+82	181	livraison	221	22.01.2025 07:41	livrée
+83	59	emporter		22.01.2025 08:03	livrée
+84	35	livraison	44	22.01.2025 10:59	annulée
+85	43	livraison	55	22.01.2025 13:01	livrée
+86	24	sur_place		22.01.2025 18:37	livrée
+87	215	livraison	264	22.01.2025 22:35	livrée
+88	81	sur_place		22.01.2025 22:40	livrée
+89	65	livraison	83	22.01.2025 22:44	livrée
+90	202	emporter		23.01.2025 05:34	livrée
+91	23	emporter		23.01.2025 08:16	livrée
+92	179	emporter		23.01.2025 10:29	livrée
+93	150	emporter		23.01.2025 12:47	livrée
+94	138	livraison	172	23.01.2025 13:24	livrée
+95	98	livraison	123	23.01.2025 13:48	livrée
+96	147	emporter		23.01.2025 13:51	livrée
+97	21	livraison	25	23.01.2025 16:29	livrée
+98	33	emporter		23.01.2025 16:34	livrée
+99	67	emporter		23.01.2025 18:40	livrée
+100	209	emporter		23.01.2025 20:00	livrée
+101	77	emporter		23.01.2025 20:49	livrée
+102	167	sur_place		23.01.2025 22:15	livrée
+103	104	livraison	133	24.01.2025 01:57	livrée
+104	61	livraison	76	24.01.2025 03:57	livrée
+105	135	livraison	169	24.01.2025 04:37	annulée
+106	192	livraison	236	24.01.2025 08:15	livrée
+107	197	sur_place		24.01.2025 09:54	livrée
+108	178	livraison	218	24.01.2025 11:24	livrée
+109	6	emporter		24.01.2025 11:25	livrée
+110	38	emporter		24.01.2025 12:09	livrée
+111	198	emporter		24.01.2025 12:49	livrée
+112	29	emporter		24.01.2025 12:59	livrée
+113	195	livraison	241	24.01.2025 13:19	livrée
+114	76	sur_place		24.01.2025 22:20	livrée
+115	199	livraison	246	24.01.2025 22:49	livrée
+116	12	livraison	14	25.01.2025 00:36	livrée
+117	214	emporter		25.01.2025 00:53	livrée
+118	137	sur_place		25.01.2025 03:47	livrée
+119	180	livraison	220	25.01.2025 05:00	livrée
+120	140	emporter		25.01.2025 10:45	livrée
+121	220	emporter		25.01.2025 12:01	livrée
+122	56	livraison	71	25.01.2025 12:21	livrée
+123	82	sur_place		25.01.2025 15:15	livrée
+124	13	sur_place		25.01.2025 17:19	livrée
+125	111	emporter		25.01.2025 21:15	livrée
+126	22	emporter		26.01.2025 03:56	livrée
+127	140	sur_place		26.01.2025 04:31	livrée
+128	169	sur_place		26.01.2025 05:39	livrée
+129	11	emporter		26.01.2025 08:57	livrée
+130	101	livraison	128	26.01.2025 10:08	livrée
+131	145	livraison	182	26.01.2025 12:48	livrée
+132	200	emporter		26.01.2025 14:41	livrée
+133	100	sur_place		26.01.2025 17:07	livrée
+134	212	sur_place		26.01.2025 17:28	livrée
+135	189	emporter		27.01.2025 00:57	livrée
+136	116	emporter		27.01.2025 03:10	livrée
+137	167	livraison	206	27.01.2025 04:58	livrée
+138	183	emporter		27.01.2025 05:26	livrée
+139	2	livraison	3	27.01.2025 05:48	livrée
+140	171	sur_place		27.01.2025 06:21	livrée
+141	71	emporter		27.01.2025 07:10	livrée
+142	160	sur_place		27.01.2025 10:08	livrée
+143	107	sur_place		27.01.2025 10:17	livrée
+144	158	livraison	195	27.01.2025 12:12	livrée
+145	186	livraison	228	27.01.2025 16:15	livrée
+146	201	livraison	249	27.01.2025 17:23	livrée
+147	26	livraison	30	28.01.2025 00:27	livrée
+148	191	emporter		28.01.2025 04:39	livrée
+149	141	emporter		28.01.2025 11:12	livrée
+150	46	livraison	58	28.01.2025 11:42	livrée
+151	206	livraison	255	28.01.2025 12:18	livrée
+152	217	emporter		28.01.2025 13:18	livrée
+153	159	emporter		28.01.2025 14:50	livrée
+154	119	emporter		28.01.2025 17:26	livrée
+155	163	livraison	200	28.01.2025 19:13	livrée
+156	157	livraison	194	28.01.2025 20:31	livrée
+157	122	emporter		28.01.2025 23:17	livrée
+158	125	livraison	156	29.01.2025 01:34	livrée
+159	217	livraison	266	29.01.2025 01:39	livrée
+160	170	livraison	209	29.01.2025 11:19	livrée
+161	205	emporter		29.01.2025 11:31	livrée
+162	189	livraison	232	29.01.2025 14:25	livrée
+163	22	livraison	26	29.01.2025 14:33	livrée
+164	122	emporter		29.01.2025 15:01	livrée
+165	136	livraison	170	29.01.2025 15:18	annulée
+166	134	emporter		29.01.2025 19:08	livrée
+167	153	livraison	190	29.01.2025 19:12	livrée
+168	170	livraison	209	29.01.2025 21:32	livrée
+169	18	sur_place		29.01.2025 23:40	livrée
+170	147	livraison	184	30.01.2025 00:14	livrée
+171	177	livraison	216	30.01.2025 00:29	livrée
+172	11	livraison	13	30.01.2025 00:49	livrée
+173	128	sur_place		30.01.2025 01:01	livrée
+174	159	emporter		30.01.2025 01:50	livrée
+175	148	sur_place		30.01.2025 03:49	livrée
+176	125	emporter		30.01.2025 05:57	annulée
+177	106	emporter		30.01.2025 06:47	livrée
+178	139	sur_place		30.01.2025 10:09	livrée
+179	195	sur_place		30.01.2025 14:22	livrée
+180	189	sur_place		30.01.2025 15:53	livrée
+181	72	emporter		30.01.2025 16:08	livrée
+182	122	livraison	152	30.01.2025 17:03	livrée
+183	188	livraison	230	30.01.2025 17:24	annulée
+184	181	sur_place		30.01.2025 17:30	livrée
+185	176	emporter		30.01.2025 19:57	livrée
+186	86	emporter		30.01.2025 22:33	livrée
+187	212	sur_place		30.01.2025 22:49	livrée
+188	179	emporter		31.01.2025 00:36	livrée
+189	214	livraison	263	31.01.2025 04:59	livrée
+190	73	sur_place		31.01.2025 06:41	livrée
+191	182	emporter		31.01.2025 06:47	livrée
+192	75	livraison	96	31.01.2025 07:15	livrée
+193	15	livraison	18	31.01.2025 10:56	livrée
+194	184	livraison	224	31.01.2025 12:37	livrée
+195	70	sur_place		31.01.2025 12:57	livrée
+196	119	emporter		31.01.2025 13:20	livrée
+197	18	sur_place		31.01.2025 13:29	livrée
+198	70	sur_place		31.01.2025 14:03	livrée
+199	93	emporter		31.01.2025 16:59	livrée
+200	137	livraison	171	31.01.2025 23:49	livrée
+201	191	livraison	234	01.02.2025 02:42	livrée
+202	12	emporter		01.02.2025 02:42	livrée
+203	129	livraison	162	01.02.2025 04:54	livrée
+204	113	livraison	142	01.02.2025 05:57	livrée
+205	99	emporter		01.02.2025 08:21	livrée
+206	173	emporter		01.02.2025 08:47	livrée
+207	104	emporter		01.02.2025 08:49	livrée
+208	197	sur_place		01.02.2025 13:05	livrée
+209	126	sur_place		01.02.2025 15:20	livrée
+210	200	emporter		01.02.2025 16:36	livrée
+211	197	livraison	243	01.02.2025 17:33	livrée
+212	138	emporter		01.02.2025 21:18	livrée
+213	173	emporter		01.02.2025 21:06	livrée
+214	55	emporter		01.02.2025 22:20	annulée
+215	136	sur_place		01.02.2025 23:14	livrée
+216	161	livraison	198	01.02.2025 23:44	livrée
+217	217	sur_place		02.02.2025 04:16	livrée
+218	72	livraison	93	02.02.2025 05:10	livrée
+219	24	sur_place		02.02.2025 13:55	livrée
+220	189	sur_place		02.02.2025 14:52	livrée
+221	72	livraison	93	02.02.2025 16:24	livrée
+222	93	livraison	117	02.02.2025 17:08	livrée
+223	211	livraison	260	02.02.2025 18:13	livrée
+224	209	sur_place		02.02.2025 18:26	livrée
+225	64	sur_place		02.02.2025 20:52	livrée
+226	47	sur_place		02.02.2025 21:36	livrée
+227	51	emporter		02.02.2025 21:43	livrée
+228	183	emporter		02.02.2025 21:49	livrée
+229	61	livraison	76	02.02.2025 22:35	livrée
+230	61	sur_place		03.02.2025 02:03	livrée
+231	149	emporter		03.02.2025 02:12	livrée
+232	68	livraison	88	03.02.2025 02:19	livrée
+233	10	sur_place		03.02.2025 03:50	livrée
+234	145	livraison	182	03.02.2025 06:49	livrée
+235	117	livraison	146	03.02.2025 07:35	livrée
+236	73	emporter		03.02.2025 07:47	livrée
+237	111	livraison	140	03.02.2025 08:01	livrée
+238	158	emporter		03.02.2025 08:24	livrée
+239	206	sur_place		03.02.2025 08:56	livrée
+240	197	sur_place		03.02.2025 10:42	livrée
+241	48	emporter		03.02.2025 12:20	livrée
+242	158	sur_place		03.02.2025 12:48	livrée
+243	124	livraison	155	03.02.2025 15:53	livrée
+244	76	sur_place		03.02.2025 16:00	livrée
+245	16	sur_place		03.02.2025 17:11	livrée
+246	216	livraison	265	03.02.2025 18:58	livrée
+247	192	emporter		03.02.2025 19:02	livrée
+248	59	emporter		03.02.2025 20:35	livrée
+249	201	livraison	249	03.02.2025 21:58	livrée
+250	86	livraison	108	04.02.2025 02:54	livrée
+251	36	livraison	46	04.02.2025 03:11	livrée
+252	165	emporter		04.02.2025 06:24	livrée
+253	89	emporter		04.02.2025 07:40	livrée
+254	10	sur_place		04.02.2025 07:41	livrée
+255	67	emporter		04.02.2025 13:07	livrée
+256	2	sur_place		04.02.2025 15:14	livrée
+257	93	sur_place		04.02.2025 15:38	livrée
+258	113	livraison	142	04.02.2025 18:17	livrée
+259	31	livraison	39	04.02.2025 18:21	livrée
+260	126	emporter		04.02.2025 21:37	livrée
+261	115	emporter		04.02.2025 23:52	livrée
+262	204	livraison	253	04.02.2025 23:58	livrée
+263	47	livraison	59	05.02.2025 03:45	livrée
+264	37	emporter		05.02.2025 07:27	livrée
+265	153	sur_place		05.02.2025 08:31	livrée
+266	202	emporter		05.02.2025 08:42	livrée
+267	213	livraison	262	05.02.2025 09:07	livrée
+268	72	livraison	93	05.02.2025 10:08	livrée
+269	3	livraison	4	05.02.2025 10:28	livrée
+270	209	sur_place		05.02.2025 12:32	livrée
+271	161	emporter		05.02.2025 13:26	livrée
+272	190	sur_place		05.02.2025 16:14	livrée
+273	1	livraison	1	05.02.2025 17:30	livrée
+274	2	sur_place		05.02.2025 17:50	livrée
+275	123	sur_place		05.02.2025 19:53	annulée
+276	19	livraison	23	06.02.2025 00:07	livrée
+277	111	emporter		06.02.2025 01:09	livrée
+278	201	emporter		06.02.2025 02:22	livrée
+279	80	sur_place		06.02.2025 05:56	livrée
+280	61	sur_place		06.02.2025 06:12	livrée
+281	178	emporter		06.02.2025 06:47	livrée
+282	209	emporter		06.02.2025 07:55	livrée
+283	6	emporter		06.02.2025 08:27	livrée
+284	160	livraison	197	06.02.2025 10:08	livrée
+285	218	sur_place		06.02.2025 13:30	livrée
+286	69	sur_place		06.02.2025 16:05	livrée
+287	141	emporter		06.02.2025 16:26	livrée
+288	60	emporter		06.02.2025 16:26	livrée
+289	71	emporter		06.02.2025 20:49	livrée
+290	54	sur_place		06.02.2025 21:19	livrée
+291	143	emporter		06.02.2025 22:30	livrée
+292	77	emporter		07.02.2025 12:59	annulée
+293	17	sur_place		07.02.2025 13:35	livrée
+294	117	emporter		07.02.2025 13:46	livrée
+295	171	sur_place		07.02.2025 17:05	livrée
+296	118	sur_place		07.02.2025 17:20	annulée
+297	99	livraison	125	07.02.2025 21:28	livrée
+298	43	emporter		07.02.2025 21:38	livrée
+299	72	livraison	93	07.02.2025 23:10	livrée
+300	184	livraison	224	07.02.2025 23:36	livrée
+301	57	livraison	72	08.02.2025 02:00	livrée
+302	31	emporter		08.02.2025 04:22	livrée
+303	84	livraison	106	08.02.2025 05:17	livrée
+304	150	sur_place		08.02.2025 05:28	livrée
+305	159	emporter		08.02.2025 06:35	livrée
+306	7	emporter		08.02.2025 07:03	livrée
+307	53	emporter		08.02.2025 07:54	livrée
+308	201	sur_place		08.02.2025 09:31	livrée
+309	98	sur_place		08.02.2025 11:40	livrée
+310	102	livraison	129	08.02.2025 12:39	livrée
+311	177	sur_place		08.02.2025 16:43	livrée
+312	64	livraison	81	08.02.2025 17:22	livrée
+313	193	livraison	239	08.02.2025 18:05	livrée
+314	188	sur_place		08.02.2025 18:27	livrée
+315	163	emporter		08.02.2025 23:52	livrée
+316	69	livraison	89	09.02.2025 01:14	livrée
+317	179	sur_place		09.02.2025 05:58	livrée
+318	164	livraison	201	09.02.2025 06:09	livrée
+319	188	sur_place		09.02.2025 08:02	livrée
+320	30	sur_place		09.02.2025 12:10	livrée
+321	58	livraison	73	09.02.2025 15:26	livrée
+322	75	emporter		09.02.2025 18:07	livrée
+323	100	livraison	127	09.02.2025 18:08	livrée
+324	192	livraison	236	10.02.2025 01:49	livrée
+325	16	livraison	20	10.02.2025 02:21	livrée
+326	90	livraison	113	10.02.2025 09:34	livrée
+327	27	livraison	32	10.02.2025 12:31	livrée
+328	9	emporter		10.02.2025 12:32	livrée
+329	3	emporter		10.02.2025 13:05	livrée
+330	147	emporter		10.02.2025 13:21	livrée
+331	183	livraison	223	10.02.2025 16:48	livrée
+332	130	emporter		10.02.2025 19:40	livrée
+333	134	livraison	168	10.02.2025 20:23	livrée
+334	187	livraison	229	10.02.2025 22:42	livrée
+335	202	sur_place		11.02.2025 03:54	annulée
+336	57	sur_place		11.02.2025 06:01	livrée
+337	44	emporter		11.02.2025 06:56	livrée
+338	108	livraison	137	11.02.2025 07:20	livrée
+339	105	livraison	134	11.02.2025 08:42	livrée
+340	213	livraison	262	11.02.2025 09:19	livrée
+341	173	livraison	212	11.02.2025 09:31	livrée
+342	189	livraison	232	11.02.2025 11:56	livrée
+343	90	livraison	114	11.02.2025 13:06	livrée
+344	113	emporter		11.02.2025 14:54	livrée
+345	127	livraison	158	11.02.2025 15:16	livrée
+346	112	sur_place		11.02.2025 17:17	livrée
+347	47	emporter		11.02.2025 19:11	livrée
+348	87	sur_place		11.02.2025 19:32	livrée
+349	86	emporter		11.02.2025 19:56	livrée
+350	28	emporter		11.02.2025 20:03	livrée
+351	108	sur_place		11.02.2025 21:44	livrée
+352	129	livraison	162	11.02.2025 22:16	livrée
+353	48	emporter		11.02.2025 23:14	livrée
+354	211	emporter		11.02.2025 23:21	livrée
+355	84	livraison	105	12.02.2025 05:22	livrée
+356	220	livraison	271	12.02.2025 08:41	livrée
+357	49	emporter		12.02.2025 09:11	livrée
+358	22	emporter		12.02.2025 09:56	livrée
+359	123	emporter		12.02.2025 11:39	livrée
+360	59	sur_place		12.02.2025 15:21	livrée
+361	22	livraison	26	12.02.2025 17:21	livrée
+362	39	livraison	49	12.02.2025 21:35	livrée
+363	106	livraison	135	12.02.2025 22:54	livrée
+364	208	livraison	257	12.02.2025 22:56	livrée
+365	97	livraison	122	13.02.2025 00:45	livrée
+366	74	emporter		13.02.2025 02:35	livrée
+367	41	emporter		13.02.2025 04:58	livrée
+368	43	emporter		13.02.2025 04:59	livrée
+369	12	emporter		13.02.2025 06:50	livrée
+370	7	sur_place		13.02.2025 06:51	livrée
+371	129	sur_place		13.02.2025 07:31	livrée
+372	100	emporter		13.02.2025 08:56	livrée
+373	94	sur_place		13.02.2025 09:53	livrée
+374	74	sur_place		13.02.2025 10:28	livrée
+375	63	livraison	80	13.02.2025 10:31	livrée
+376	82	emporter		13.02.2025 11:38	livrée
+377	55	emporter		13.02.2025 11:46	livrée
+378	67	emporter		13.02.2025 17:47	livrée
+379	211	emporter		13.02.2025 20:04	livrée
+380	116	livraison	145	14.02.2025 03:13	livrée
+381	4	sur_place		14.02.2025 04:49	livrée
+382	217	livraison	266	14.02.2025 06:12	livrée
+383	207	emporter		14.02.2025 06:29	livrée
+384	79	livraison	100	14.02.2025 06:55	livrée
+385	163	sur_place		14.02.2025 09:28	livrée
+386	112	emporter		14.02.2025 10:16	livrée
+387	77	emporter		14.02.2025 11:44	livrée
+388	32	emporter		14.02.2025 12:39	livrée
+389	116	livraison	145	14.02.2025 13:34	livrée
+390	36	emporter		14.02.2025 19:01	livrée
+391	217	livraison	267	15.02.2025 00:43	livrée
+392	162	livraison	199	15.02.2025 04:23	livrée
+393	38	livraison	48	15.02.2025 04:53	livrée
+394	194	sur_place		15.02.2025 05:32	livrée
+395	34	livraison	43	15.02.2025 05:48	livrée
+396	77	livraison	98	15.02.2025 07:24	livrée
+397	186	livraison	228	15.02.2025 08:51	livrée
+398	33	emporter		15.02.2025 10:32	livrée
+399	91	sur_place		15.02.2025 11:36	livrée
+400	195	sur_place		15.02.2025 13:12	livrée
+401	200	sur_place		15.02.2025 18:22	livrée
+402	22	sur_place		15.02.2025 18:30	livrée
+403	29	emporter		15.02.2025 18:41	livrée
+404	180	livraison	220	15.02.2025 19:32	livrée
+405	68	livraison	88	15.02.2025 20:48	livrée
+406	189	sur_place		15.02.2025 20:28	livrée
+407	220	emporter		16.02.2025 00:10	livrée
+408	107	livraison	136	16.02.2025 01:30	livrée
+409	75	livraison	96	16.02.2025 03:52	livrée
+410	150	livraison	187	16.02.2025 04:39	livrée
+411	52	emporter		16.02.2025 08:49	livrée
+412	91	sur_place		16.02.2025 09:09	livrée
+413	213	livraison	262	16.02.2025 09:45	livrée
+414	52	emporter		16.02.2025 10:23	annulée
+415	211	livraison	260	16.02.2025 12:44	livrée
+416	99	livraison	126	16.02.2025 17:25	livrée
+417	220	livraison	271	17.02.2025 00:25	livrée
+418	121	livraison	151	17.02.2025 02:03	livrée
+419	128	livraison	161	17.02.2025 03:04	livrée
+420	10	livraison	12	17.02.2025 03:47	livrée
+421	58	emporter		17.02.2025 07:48	livrée
+422	88	emporter		17.02.2025 07:55	livrée
+423	19	sur_place		17.02.2025 08:18	livrée
+424	179	livraison	219	17.02.2025 10:44	livrée
+425	145	livraison	182	17.02.2025 10:54	livrée
+426	111	sur_place		17.02.2025 13:15	livrée
+427	197	sur_place		17.02.2025 15:57	livrée
+428	15	emporter		17.02.2025 16:25	livrée
+429	156	sur_place		17.02.2025 16:43	livrée
+430	135	livraison	169	17.02.2025 17:27	livrée
+431	167	livraison	206	17.02.2025 20:11	livrée
+432	14	livraison	16	17.02.2025 22:06	annulée
+433	193	emporter		17.02.2025 23:25	livrée
+434	61	emporter		18.02.2025 00:53	annulée
+435	208	livraison	257	18.02.2025 01:34	annulée
+436	157	sur_place		18.02.2025 02:12	livrée
+437	184	emporter		18.02.2025 02:54	livrée
+438	131	emporter		18.02.2025 02:54	livrée
+439	8	emporter		18.02.2025 04:41	annulée
+440	213	sur_place		18.02.2025 05:04	livrée
+441	136	livraison	170	18.02.2025 06:47	livrée
+442	105	sur_place		18.02.2025 07:20	livrée
+443	173	sur_place		18.02.2025 12:27	livrée
+444	9	livraison	11	18.02.2025 13:52	annulée
+445	180	emporter		18.02.2025 14:56	livrée
+446	25	emporter		18.02.2025 16:04	livrée
+447	158	emporter		18.02.2025 17:32	livrée
+448	7	sur_place		18.02.2025 20:18	livrée
+449	36	livraison	46	18.02.2025 22:22	livrée
+450	181	livraison	221	18.02.2025 23:07	livrée
+451	73	emporter		19.02.2025 00:09	livrée
+452	124	sur_place		19.02.2025 01:22	livrée
+453	57	emporter		19.02.2025 01:49	livrée
+454	124	livraison	155	19.02.2025 04:18	livrée
+455	101	livraison	128	19.02.2025 10:54	livrée
+456	181	emporter		19.02.2025 12:11	livrée
+457	56	sur_place		19.02.2025 14:42	livrée
+458	97	livraison	122	19.02.2025 15:30	livrée
+459	201	emporter		19.02.2025 18:15	livrée
+460	187	sur_place		19.02.2025 21:41	livrée
+461	158	livraison	195	20.02.2025 03:11	livrée
+462	140	sur_place		20.02.2025 06:07	livrée
+463	30	emporter		20.02.2025 08:45	livrée
+464	96	sur_place		20.02.2025 08:51	livrée
+465	2	emporter		20.02.2025 09:43	livrée
+466	50	emporter		20.02.2025 15:31	livrée
+467	152	emporter		20.02.2025 17:08	livrée
+468	122	livraison	152	20.02.2025 23:26	livrée
+469	183	emporter		20.02.2025 23:31	livrée
+470	98	sur_place		20.02.2025 23:56	livrée
+471	166	emporter		21.02.2025 03:20	livrée
+472	122	livraison	152	21.02.2025 07:58	livrée
+473	5	emporter		21.02.2025 09:41	livrée
+474	215	livraison	264	21.02.2025 10:01	livrée
+475	179	emporter		21.02.2025 17:20	livrée
+476	49	livraison	61	21.02.2025 18:53	livrée
+477	198	livraison	245	21.02.2025 18:57	livrée
+478	129	sur_place		21.02.2025 22:38	livrée
+479	27	livraison	31	21.02.2025 22:50	livrée
+480	65	livraison	83	22.02.2025 00:15	livrée
+481	77	livraison	98	22.02.2025 06:47	livrée
+482	112	emporter		22.02.2025 10:03	livrée
+483	181	emporter		22.02.2025 10:52	livrée
+484	7	emporter		22.02.2025 11:53	livrée
+485	47	sur_place		22.02.2025 12:17	livrée
+486	26	livraison	30	22.02.2025 12:44	livrée
+487	155	livraison	192	22.02.2025 12:51	livrée
+488	11	emporter		22.02.2025 12:56	livrée
+489	10	sur_place		22.02.2025 14:36	livrée
+490	38	livraison	48	22.02.2025 20:23	livrée
+491	158	sur_place		22.02.2025 19:59	livrée
+492	174	emporter		22.02.2025 20:15	annulée
+493	108	livraison	137	23.02.2025 01:17	livrée
+494	89	emporter		23.02.2025 02:00	livrée
+495	61	sur_place		23.02.2025 02:16	livrée
+496	91	livraison	115	23.02.2025 02:24	livrée
+497	46	sur_place		23.02.2025 02:40	annulée
+498	105	livraison	134	23.02.2025 04:22	livrée
+499	119	sur_place		23.02.2025 04:27	livrée
+500	121	livraison	151	23.02.2025 04:48	livrée
+501	195	livraison	241	23.02.2025 06:29	livrée
+502	10	livraison	12	23.02.2025 07:07	livrée
+503	38	sur_place		23.02.2025 07:46	livrée
+504	134	sur_place		23.02.2025 11:49	livrée
+505	192	livraison	237	23.02.2025 17:14	livrée
+506	63	emporter		23.02.2025 18:56	livrée
+507	213	livraison	262	23.02.2025 21:23	livrée
+508	151	emporter		23.02.2025 23:04	livrée
+509	154	emporter		24.02.2025 00:47	livrée
+510	121	sur_place		24.02.2025 01:05	livrée
+511	196	emporter		24.02.2025 02:17	livrée
+512	133	livraison	167	24.02.2025 05:09	livrée
+513	104	emporter		24.02.2025 07:10	livrée
+514	144	livraison	181	24.02.2025 07:25	livrée
+515	181	sur_place		24.02.2025 10:29	livrée
+516	39	livraison	49	24.02.2025 15:45	livrée
+517	115	livraison	144	24.02.2025 19:30	livrée
+518	112	livraison	141	24.02.2025 19:33	livrée
+519	49	livraison	62	24.02.2025 23:26	livrée
+520	197	emporter		25.02.2025 04:07	livrée
+521	217	emporter		25.02.2025 05:32	livrée
+522	98	emporter		25.02.2025 07:33	livrée
+523	49	emporter		25.02.2025 07:59	livrée
+524	180	emporter		25.02.2025 11:52	livrée
+525	190	livraison	233	25.02.2025 12:05	livrée
+526	9	livraison	11	25.02.2025 14:44	livrée
+527	66	emporter		25.02.2025 14:50	livrée
+528	58	emporter		25.02.2025 16:21	livrée
+529	205	sur_place		25.02.2025 16:40	annulée
+530	140	sur_place		25.02.2025 17:49	livrée
+531	220	emporter		26.02.2025 02:35	livrée
+532	210	livraison	259	26.02.2025 02:53	livrée
+533	43	livraison	55	26.02.2025 04:23	livrée
+534	77	emporter		26.02.2025 07:32	livrée
+535	186	livraison	228	26.02.2025 08:02	livrée
+536	157	sur_place		26.02.2025 09:18	livrée
+537	182	livraison	222	26.02.2025 11:24	livrée
+538	171	livraison	210	26.02.2025 14:25	livrée
+539	182	livraison	222	26.02.2025 16:11	livrée
+540	47	emporter		26.02.2025 18:55	livrée
+541	163	emporter		27.02.2025 07:52	livrée
+542	128	livraison	161	27.02.2025 13:04	livrée
+543	51	emporter		27.02.2025 21:30	livrée
+544	83	livraison	104	27.02.2025 22:20	livrée
+545	107	sur_place		27.02.2025 23:31	livrée
+546	35	emporter		28.02.2025 02:46	livrée
+547	212	livraison	261	28.02.2025 04:53	livrée
+548	167	emporter		28.02.2025 05:03	livrée
+549	116	emporter		28.02.2025 09:38	livrée
+550	188	emporter		28.02.2025 20:21	livrée
