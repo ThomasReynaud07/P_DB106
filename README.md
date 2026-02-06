@@ -138,7 +138,7 @@ encodage utf8mb4
 
 première ligne ignorée (en-têtes de colonnes)
 
-🧠 Traitements spécifiques
+## 🧠 Traitements spécifiques
 
 Gestion des valeurs NULL
 
