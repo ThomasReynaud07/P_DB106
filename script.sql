@@ -13,6 +13,23 @@ docker cp t_livraison.tsv db:/var/lib/mysql-files/
 -- A executer depuis le cmd aussi dans le dossier ou se trouve script.sql!!!
 -- docker cp script.sql db:/var/lib/mysql-files/
 
+-- Commande à rentrer dans MySQL pour exécuter le script
+-- SOURCE /var/lib/mysql-files/script.sql
+
+-- Commandes Docker à exécuter pour faire un backup complet
+/*Il faut rajouter un dossier backup dans le dossier de mapping (Docker_MYSQL) et ensuite executer cette commande
+docker exec -i db mysqldump -u root -proot db_pizzeria > chemin\backupFull.sql
+*/
+
+-- Commandes Docker à exécuter pour faire un backup différentiel des tables qui ont été modifiées apres 00:00
+/*docker exec -i db mysqldump -u root -proot --where="date_modification >= '2026-01-223 00:00:00'" db_pizzeria t_livreur > chemin\backupDiff.sql*/
+
+/*Commandes Docker à exécuter pour restaurer une BDD à partir d'un fichier
+-- Il faut d'abord copier le fichier dans Docker pour que MySQL y ait accès
+-- docker cp "chemin_du_volume_Docker\backup\backupFull.sql" db:/backupFull.sql
+-- Commande pour restaurer la BDD (il faut s'assurer que la BDD db_pizzeria existe avant d'exécuter la commande)
+-- mysql -u root -proot db_pizzeria < /backupFull.sql*/
+
 -- Creation Db
 DROP DATABASE IF EXISTS db_thanos_pizzeria;     -- Suppression de la database si elle existe déjà!
 CREATE DATABASE db_thanos_pizzeria CHARACTER SET utf8mb4;       -- Création de la database
@@ -190,8 +207,6 @@ SET
     date_depart = STR_TO_DATE(@date_depart, '%d.%m.%Y %H:%i'),      -- On change le format de DATETIME car les données ne sont pas au même format
     date_arrivee = STR_TO_DATE(@date_arrivee, '%d.%m.%Y %H:%i');    -- On change le format de DATETIME car les données ne sont pas au même format
 
--- BACKUP RESTORE | VOIR FICHIER ScriptBackup.sql!!!!
-
 ALTER TABLE t_adresse
 ADD COLUMN date_modification DATETIME DEFAULT CURRENT_TIMESTAMP 
 ON UPDATE CURRENT_TIMESTAMP;
@@ -235,13 +250,34 @@ WHERE article_fk BETWEEN 1 AND 8    -- Car dans les articles il n'y a que les 8 
 GROUP BY t_article.nom              -- On regroupe par pizza 
 ORDER BY Total DESC;                -- On affiche du plus grand au plus petit
 
+SELECT 
+  a.nom AS pizza,
+  SUM(lc.quantite) AS quantite_totale
+FROM t_ligne_commande lc
+JOIN t_article a ON a.article_id = lc.article_fk
+WHERE a.type = 'pizza'
+GROUP BY a.nom
+ORDER BY quantite_totale DESC
+LIMIT 10;
+
+
 -- Request 2
 SELECT a.nom AS Topping, COUNT(l.ligne_id) AS Nombre
-FROM t_ligne_commande l
+FROM t_ligne_commande AS l
 JOIN t_article a ON l.article_fk = a.article_id
 WHERE a.type = 'topping'            -- On cherche uniquement les toppings (type = 'topping')
 GROUP BY a.nom                      -- On regroupe par les noms des toppings
 ORDER BY Nombre DESC;               -- On affiche du plus grand au plus petit
+
+SELECT
+  a.nom AS topping,
+  SUM(lc.quantite) AS nombre
+FROM t_ligne_commande AS lc
+JOIN t_article a ON a.article_id = lc.article_fk
+WHERE a.type = 'topping'
+GROUP BY a.nom
+ORDER BY nombre DESC;
+
 
 -- Request 3
 SELECT DATE(liv.date_arrivee) AS date_livraison, ROUND(SUM(p.montant), 2) AS chiffre_affaires
@@ -250,6 +286,16 @@ JOIN t_paiements p ON liv.commande_fk = p.commande_fk
 WHERE liv.statut = 'livree'         -- On ne prend en compte que les livraisons livrées
 GROUP BY DATE(liv.date_arrivee)     -- On regroupe par date de livraison
 ORDER BY DATE(liv.date_arrivee);    -- On affiche par ordre chronologique
+
+SELECT 
+  DATE(lv.date_arrivee) AS date_livraison,
+  ROUND(SUM(p.montant), 2) AS chiffre_affaires
+FROM t_livraison lv
+JOIN t_paiements p ON p.commande_fk = lv.commande_fk
+WHERE lv.statut = 'livree'
+GROUP BY DATE(lv.date_arrivee)
+ORDER BY DATE(lv.date_arrivee);
+
 
 -- Request 4
 SELECT a.npa, a.localite, ROUND(SUM(p.montant), 2) AS chiffre_affaires
@@ -260,6 +306,19 @@ JOIN t_paiements p ON c.commande_id = p.commande_fk
 WHERE l.statut = 'livree'           -- On prend uniquement les commandes livrées
 GROUP BY a.npa, a.localite          -- On regroupe par zone postale et localité
 ORDER BY chiffre_affaires DESC;     -- On affiche du plus grand chiffre d'affaires au plus petit
+
+SELECT
+  a.npa,
+  a.localite,
+  ROUND(SUM(p.montant), 2) AS chiffre_affaires
+FROM t_livraison lv
+JOIN t_commande c  ON c.commande_id = lv.commande_fk
+JOIN t_adresse a   ON a.adresse_id = c.adresse_fk
+JOIN t_paiements p ON p.commande_fk = c.commande_id
+WHERE lv.statut = 'livree'
+GROUP BY a.npa, a.localite
+ORDER BY chiffre_affaires DESC;
+
 
 -- Request 5
 SELECT HOUR(date_creation) AS heure, COUNT(commande_id) AS nombre_commandes
