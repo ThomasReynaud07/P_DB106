@@ -1,0 +1,41 @@
+<%- include('layout', { body: `
+  <h1 class="mb-3">Panier</h1>
+  ${lines.length === 0 ? `
+    <p>Panier vide. <a href="/menu">Retour au menu</a></p>
+  ` : `
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <table class="table align-middle">
+          <thead><tr><th>Article</th><th>Qté</th><th>Prix</th><th></th></tr></thead>
+          <tbody>
+            ${lines.map(l => `
+              <tr>
+                <td>${l.article.nom}</td>
+                <td>${l.item.qty}</td>
+                <td>${(Number(l.article.prix)*l.item.qty).toFixed(2)} CHF</td>
+                <td>
+                  <form method="POST" action="/panier/remove">
+                    <input type="hidden" name="articleId" value="${l.article.article_id}" />
+                    <button class="btn btn-sm btn-outline-danger">Retirer</button>
+                  </form>
+                </td>
+              </tr>
+            `).join('')}
+          </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between">
+          <div class="fw-bold fs-5">Total</div>
+          <div class="fw-bold fs-5">${total.toFixed(2)} CHF</div>
+        </div>
+
+        <div class="d-flex justify-content-between mt-3">
+          <form method="POST" action="/panier/clear">
+            <button class="btn btn-outline-secondary">Vider</button>
+          </form>
+          <a class="btn btn-success" href="/checkout">Commander</a>
+        </div>
+      </div>
+    </div>
+  `}
+` }) %>

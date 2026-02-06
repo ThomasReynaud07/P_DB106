@@ -1,0 +1,47 @@
+<%- include('layout', { body: `
+  <h1 class="mb-4">🍕 Notre restaurant</h1>
+
+  <!-- Carousel -->
+
+  <div id="restaurantCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+    <div class="carousel-inner rounded shadow">
+      <div class="carousel-item active">
+        <img src="/images/resto1.jpeg" class="d-block w-100" style="height:420px; object-fit:cover;" alt="Resto 1">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/resto2.jpeg" class="d-block w-100" style="height:420px; object-fit:cover;" alt="Resto 2">
+      </div>
+      <div class="carousel-item">
+        <img src="/images/resto3.jpg" class="d-block w-100" style="height:420px; object-fit:cover;" alt="Resto 3">
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Précédent</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#restaurantCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Suivant</span>
+    </button>
+  </div>
+` }) %>
+
+
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h4>📍 Où nous trouver</h4>
+      <p>Rue de la Pizza 12, 1000 Lausanne</p>
+
+      <div class="ratio ratio-16x9">
+        <iframe
+          src="https://www.google.com/maps?q=Rue+de+la+Pizza+12+Lausanne&output=embed"
+          style="border:0;"
+          allowfullscreen
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </div>
+` }) %>

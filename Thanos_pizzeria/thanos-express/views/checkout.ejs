@@ -1,0 +1,79 @@
+<%- include('layout', { body: `
+  <h1 class="mb-3">Checkout</h1>
+
+  <form method="POST" action="/checkout" class="card shadow-sm">
+    <div class="card-body row g-3">
+      <div class="col-md-6">
+        <label class="form-label">Nom</label>
+        <input class="form-control" name="nom" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Prénom</label>
+        <input class="form-control" name="prenom" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Courriel</label>
+        <input class="form-control" name="courriel" type="email" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Téléphone</label>
+        <input class="form-control" name="telephone" required />
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Type</label>
+        <select class="form-select" name="type" id="type" required>
+          <option value="sur_place">Sur place</option>
+          <option value="emporter">À emporter</option>
+          <option value="livraison">Livraison</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Paiement</label>
+        <select class="form-select" name="mode" required>
+          <option value="cash">Cash</option>
+          <option value="carte">Carte</option>
+          <option value="twint">Twint</option>
+        </select>
+      </div>
+
+      <div class="col-12" id="adresseBloc" style="display:none;">
+        <h5 class="mt-2">Adresse de livraison</h5>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label">Rue</label>
+            <input class="form-control" name="rue" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">NPA</label>
+            <input class="form-control" name="npa" />
+          </div>
+          <div class="col-md-3">
+            <label class="form-label">Localité</label>
+            <input class="form-control" name="localite" />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 text-end">
+        <button class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+  </form>
+
+  <script>
+    const typeSelect = document.getElementById('type');
+    const adresseBloc = document.getElementById('adresseBloc');
+    function toggleAdresse() {
+      const isLivraison = typeSelect.value === 'livraison';
+      adresseBloc.style.display = isLivraison ? 'block' : 'none';
+      ['rue','npa','localite'].forEach(name => {
+        const el = document.querySelector('[name="'+name+'"]');
+        if (el) el.required = isLivraison;
+      });
+    }
+    typeSelect.addEventListener('change', toggleAdresse);
+    toggleAdresse();
+  </script>
+` }) %>

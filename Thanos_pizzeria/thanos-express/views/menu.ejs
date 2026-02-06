@@ -1,0 +1,24 @@
+<%- include('layout', { body: `
+  <h1 class="mb-3">Menu</h1>
+  <div class="row g-3">
+    ${articles.map(a => `
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1">${a.nom}</h5>
+              <span class="badge bg-secondary">${a.type}</span>
+            </div>
+            <div class="text-muted mb-2">TVA: ${a.tva}%</div>
+            <div class="fw-bold fs-5">${Number(a.prix).toFixed(2)} CHF</div>
+            <form class="d-flex gap-2 mt-2" method="POST" action="/panier/add">
+              <input type="hidden" name="articleId" value="${a.article_id}" />
+              <input class="form-control" style="max-width:90px" type="number" name="qty" min="1" value="1" />
+              <button class="btn btn-primary">Ajouter</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    `).join('')}
+  </div>
+` }) %>
