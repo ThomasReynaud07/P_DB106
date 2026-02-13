@@ -13,7 +13,8 @@ Ce projet consiste en la **conception et l’implémentation complète d’une b
 Il permet de gérer les **clients, adresses, commandes, articles, paiements et livraisons**, en respectant l’intégrité référentielle et les bonnes pratiques SQL.
 
 Le projet inclut :
-- un **modèle de données (MLD)** réalisé avec Looping
+- un **modèle de données (MLD)** réalisé avec Looping voir image ci dessous
+[image looping](MLD.png)
 - un **script SQL complet et commenté**
 - une **exécution via MySQL dans un conteneur Docker**
 - des **imports automatisés depuis des fichiers `.tsv`**
@@ -57,7 +58,7 @@ Les relations permettent :
 - **MySQL**
 - **SQL**
 - **Docker**
-- **Looping** (conception du MLD)
+- **Looping** 
 
 ---
 
@@ -100,14 +101,6 @@ SOURCE /var/lib/mysql-files/script.sql;
 
 Le script commence par :
 
-🧹 la suppression de la base si elle existe déjà
-
-🆕 la création d’une nouvelle base
-
-🔤 l’utilisation de l’encodage utf8mb4
-
-📌 la sélection de la base active
-
 ```bash
 DROP DATABASE IF EXISTS db_thanos_pizzeria;
 CREATE DATABASE db_thanos_pizzeria CHARACTER SET utf8mb4;
@@ -115,28 +108,93 @@ USE db_thanos_pizzeria;
 ```
 
 ## 🏗️ Création des tables
+```bash
+CREATE TABLE t_client(
+   client_id INT AUTO_INCREMENT,
+   nom VARCHAR(50) NOT NULL,
+   prenom VARCHAR(50) NOT NULL,
+   courriel VARCHAR(255) NOT NULL,
+   telephone VARCHAR(50) NOT NULL,
+   PRIMARY KEY(client_id)
+);
 
-Les tables sont créées dans un ordre logique, afin de respecter les dépendances entre clés étrangères.
+CREATE TABLE t_adresse(
+   adresse_id INT AUTO_INCREMENT,
+   client_fk INT NOT NULL,
+   rue VARCHAR(255) NOT NULL,
+   npa SMALLINT NOT NULL,
+   localite VARCHAR(50) NOT NULL,
+   longitude FLOAT,
+   latitude FLOAT,
+   PRIMARY KEY(adresse_id),
+   FOREIGN KEY(client_fk) REFERENCES t_client(client_id)
+);
 
-Principes appliqués :
+CREATE TABLE t_article(
+   article_id INT AUTO_INCREMENT,
+   type VARCHAR(50) NOT NULL,
+   nom VARCHAR(50) NOT NULL,
+   prix FLOAT NOT NULL,
+   tva FLOAT NOT NULL,
+   actif BOOLEAN NOT NULL,
+   PRIMARY KEY(article_id)
+);
 
-🔑 clés primaires auto-incrémentées
+CREATE TABLE t_livreur(
+   livreur_id INT AUTO_INCREMENT,
+   nom VARCHAR(50) NOT NULL,
+   actif BOOLEAN NOT NULL,		
+   PRIMARY KEY(livreur_id)
+);
 
-🔗 clés étrangères garantissant l’intégrité référentielle
+CREATE TABLE t_commande(
+   commande_id INT AUTO_INCREMENT,
+   client_fk INT NOT NULL,
+   type ENUM('sur_place','emporter','livraison') NOT NULL,  
+   adresse_fk INT,
+   date_creation DATETIME NOT NULL,   
+   statut VARCHAR(50) NOT NULL,      
+   PRIMARY KEY(commande_id),
+   FOREIGN KEY(client_fk) REFERENCES t_client(client_id),
+   FOREIGN KEY(adresse_fk) REFERENCES t_adresse(adresse_id)
+);
 
-📋 types ENUM pour limiter les valeurs possibles
+CREATE TABLE t_ligne_commande(
+   ligne_id INT AUTO_INCREMENT,
+   commande_fk INT NOT NULL,
+   article_fk INT NOT NULL,
+   quantite INT,
+   prix_unitaire FLOAT NOT NULL,
+   parent_ligne_fk INT,  
+   PRIMARY KEY(ligne_id),
+   FOREIGN KEY(parent_ligne_fk) REFERENCES t_ligne_commande(ligne_id),
+   FOREIGN KEY(article_fk) REFERENCES t_article(article_id),
+   FOREIGN KEY(commande_fk) REFERENCES t_commande(commande_id)
+);
 
-🔁 gestion des relations récursives (parent_ligne_fk)
+CREATE TABLE t_livraison(
+   livraison_id INT AUTO_INCREMENT,
+   commande_fk INT NOT NULL,
+   livreur_fk INT NOT NULL,
+   statut ENUM('livree','annulee') NOT NULL,   
+   date_depart DATETIME NOT NULL,
+   date_arrivee DATETIME NOT NULL,  
+   PRIMARY KEY(livraison_id),
+   UNIQUE(commande_fk),
+   FOREIGN KEY(livreur_fk) REFERENCES t_livreur(livreur_id),
+   FOREIGN KEY(commande_fk) REFERENCES t_commande(commande_id)
+);
 
-📥 Import des données (LOAD DATA INFILE)
-
-Les données sont importées depuis des fichiers .tsv avec les règles suivantes :
-
-séparation par tabulation (\t)
-
-encodage utf8mb4
-
-première ligne ignorée (en-têtes de colonnes)
+CREATE TABLE t_paiements(
+   paiements_id INT AUTO_INCREMENT,
+   commande_fk INT NOT NULL,
+   mode ENUM('cash','carte','twint') NOT NULL,  
+   montant FLOAT NOT NULL,
+   date_paiement DATETIME NOT NULL,
+   PRIMARY KEY(paiements_id),
+   FOREIGN KEY(commande_fk) REFERENCES t_commande(commande_id)
+);
+```
 
 ## 🧠 Traitements spécifiques
 
