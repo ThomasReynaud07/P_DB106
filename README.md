@@ -237,6 +237,15 @@ db_pizzeria t_livreur > backupDiff.sql
 mysql -u root -proot db_pizzeria < backupFull.sql
 ```
 
+## 💻 Approfonidssement Application Web
+
+Afin d'approfondir le projet db, j'ai réalisé une application web qui simule une pizzeria.
+Nous pouvons faire une simulation de commande de pizza, et les entrées sont enregistrées dans la base de donnée.
+Le but est d'approfondir mes connaissance en javascript et de continuer le projet DB.
+
+
+
+
 ## 👤 Auteur
 
 Thomas Reynaud
