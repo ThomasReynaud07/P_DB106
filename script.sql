@@ -242,82 +242,42 @@ ON UPDATE CURRENT_TIMESTAMP;
 -- Request Select
 
 -- Request 1
-SELECT t_article.nom AS Pizza, COUNT(quantite) AS Total
-FROM t_ligne_commande
-JOIN t_article
-ON article_id = article_fk
-WHERE article_fk BETWEEN 1 AND 8    -- Car dans les articles il n'y a que les 8 premières qui sont des pizzas, le reste c'est boissons, desserts et toppings
-GROUP BY t_article.nom              -- On regroupe par pizza 
-ORDER BY Total DESC;                -- On affiche du plus grand au plus petit
-
-SELECT 
-  a.nom AS pizza,
-  SUM(lc.quantite) AS quantite_totale
+SELECT a.nom AS Pizza, SUM(lc.quantite) AS Total_Quantite
 FROM t_ligne_commande lc
-JOIN t_article a ON a.article_id = lc.article_fk
+JOIN t_article a ON lc.article_fk = a.article_id
 WHERE a.type = 'pizza'
 GROUP BY a.nom
-ORDER BY quantite_totale DESC
-LIMIT 10;
+ORDER BY Total_Quantite DESC
+LIMIT 10;          
 
 
 -- Request 2
-SELECT a.nom AS Topping, COUNT(l.ligne_id) AS Nombre
-FROM t_ligne_commande AS l
-JOIN t_article a ON l.article_fk = a.article_id
-WHERE a.type = 'topping'            -- On cherche uniquement les toppings (type = 'topping')
-GROUP BY a.nom                      -- On regroupe par les noms des toppings
-ORDER BY Nombre DESC;               -- On affiche du plus grand au plus petit
-
-SELECT
-  a.nom AS topping,
-  SUM(lc.quantite) AS nombre
-FROM t_ligne_commande AS lc
-JOIN t_article a ON a.article_id = lc.article_fk
-WHERE a.type = 'topping'
-GROUP BY a.nom
-ORDER BY nombre DESC;
+SELECT a.nom AS Topping, SUM(lc.quantite) AS Nombre
+FROM t_ligne_commande lc
+JOIN t_article a ON lc.article_fk = a.article_id
+WHERE a.type = 'topping'  -- On cherche uniquement les toppings (type = 'topping')                       
+GROUP BY a.nom   -- On regroupe par les noms des toppings
+ORDER BY Nombre DESC; -- On affiche du plus grand au plus petit
 
 
 -- Request 3
-SELECT DATE(liv.date_arrivee) AS date_livraison, ROUND(SUM(p.montant), 2) AS chiffre_affaires
-FROM t_livraison liv
-JOIN t_paiements p ON liv.commande_fk = p.commande_fk
-WHERE liv.statut = 'livree'         -- On ne prend en compte que les livraisons livrées
-GROUP BY DATE(liv.date_arrivee)     -- On regroupe par date de livraison
-ORDER BY DATE(liv.date_arrivee);    -- On affiche par ordre chronologique
-
-SELECT 
-  DATE(lv.date_arrivee) AS date_livraison,
-  ROUND(SUM(p.montant), 2) AS chiffre_affaires
+SELECT DATE(lv.date_arrivee) AS date_livraison, ROUND(SUM(p.montant), 2) AS chiffre_affaires
 FROM t_livraison lv
-JOIN t_paiements p ON p.commande_fk = lv.commande_fk
-WHERE lv.statut = 'livree'
-GROUP BY DATE(lv.date_arrivee)
-ORDER BY DATE(lv.date_arrivee);
+JOIN t_paiements p ON lv.commande_fk = p.commande_fk
+WHERE lv.statut = 'livree'  -- On ne prend en compte que les livraisons livrées
+GROUP BY DATE(lv.date_arrivee)  -- On regroupe par date de livraison
+ORDER BY date_livraison ASC;  -- On affiche par ordre chronologique
 
 
 -- Request 4
-SELECT a.npa, a.localite, ROUND(SUM(p.montant), 2) AS chiffre_affaires
-FROM t_livraison l
-JOIN t_commande c ON l.commande_fk = c.commande_id
-JOIN t_adresse a ON c.adresse_fk = a.adresse_id
-JOIN t_paiements p ON c.commande_id = p.commande_fk
-WHERE l.statut = 'livree'           -- On prend uniquement les commandes livrées
-GROUP BY a.npa, a.localite          -- On regroupe par zone postale et localité
-ORDER BY chiffre_affaires DESC;     -- On affiche du plus grand chiffre d'affaires au plus petit
-
-SELECT
-  a.npa,
-  a.localite,
-  ROUND(SUM(p.montant), 2) AS chiffre_affaires
+SELECT ad.npa, ad.localite, ROUND(SUM(p.montant), 2) AS chiffre_affaires
 FROM t_livraison lv
-JOIN t_commande c  ON c.commande_id = lv.commande_fk
-JOIN t_adresse a   ON a.adresse_id = c.adresse_fk
-JOIN t_paiements p ON p.commande_fk = c.commande_id
-WHERE lv.statut = 'livree'
-GROUP BY a.npa, a.localite
-ORDER BY chiffre_affaires DESC;
+JOIN t_commande c ON lv.commande_fk = c.commande_id
+JOIN t_adresse ad ON c.adresse_fk = ad.adresse_id
+JOIN t_paiements p ON c.commande_id = p.commande_fk
+WHERE lv.statut = 'livree'  -- On prend uniquement les commandes livrées
+GROUP BY ad.npa, ad.localite  -- On regroupe par zone postale et localité
+ORDER BY chiffre_affaires DESC; -- On affiche du plus grand chiffre d'affaires au plus petit
 
 
 -- Request 5
