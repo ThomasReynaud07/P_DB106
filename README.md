@@ -68,8 +68,8 @@ Les fichiers `Database.sql` et `LoadData.sql` sont **entièrement commentés** e
 
 ### 1️⃣ Préparation des fichiers de données
 
-Les fichiers `.tsv` doivent être copiés dans le conteneur Docker MySQL afin d’être accessibles par la commande `LOAD DATA INFILE` :
-Pour ce faire vous allez allé dans le dossier où se trouve tous les fichiers de données .tsv, et vous allez ensuite executer les commandes ci-dessous!
+Les fichiers `.tsv` doivent être copiés dans le conteneur Docker MySQL afin d’être accessibles par la commande `LOAD DATA INFILE` :<br>
+Pour ce faire vous allez aller dans le dossier où se trouve tous les fichiers de données .tsv, et vous allez ensuite executer les commandes ci-dessous!
 
 ```bash
 docker cp t_client.tsv db:/var/lib/mysql-files/
@@ -85,8 +85,8 @@ docker cp t_livraison.tsv db:/var/lib/mysql-files/
 
 ## 📁 Copie des scripts dans le conteneur Docker
 
-Les scripts SQL doivent être copié dans le conteneur MySQL afin de pouvoir être exécuté !
-Pour ce faire vous allez allé dans le dossier où se trouve les scripts et vous allez executer ces 2 commandes :
+Les scripts SQL doivent être copiés dans le conteneur MySQL afin de pouvoir être exécuté !<br>
+Pour ce faire vous allez aller dans le dossier où se trouve les scripts et vous allez executer ces 2 commandes :
 
 ```bash
 docker cp Database.sql db:/var/lib/mysql-files/
@@ -94,11 +94,11 @@ docker cp LoadData.sql db:/var/lib/mysql-files/
 ```
 ## 🔌 Connexion à MySQL
 
-Afin d'executer les scripts il faut vous connecter à MySQL ! 
+Afin d'exécuter les scripts il faut vous connecter à MySQL !<br> 
 Pour ce faire il faudra vous rendre dans la console db de votre docker et executer cette commande ci dessous : 
 
 ```bash
-mysql -u{Username} -p{Password}
+mysql -u"Username" -p"Password"
 ```
 ## ▶️ Exécution du script
 
@@ -208,22 +208,22 @@ CREATE TABLE t_paiements(
 );
 ```
 
-## 🧠 Traitements spécifiques
+# 🧠 Traitements spécifiques
 
-# Gestion des valeurs NULL
+## Gestion des valeurs NULL
 ```bash
 adresse_fk = NULLIF(@adresse_fk, '')
 ```
-Cette ligne ci-dessus sert à eviter les erreurs quand une valeurs n'est pas remplis. 
-Elle dit à MySQL "Si tu vois une valeur (Dans notre cas c'est adresse_fk) qui est vide, alors tu transforme cette valeur en null
+Cette ligne ci-dessus éviter les erreurs quand une valeur n'est pas remplie. <br>
+Elle dit à MySQL "Si tu vois une valeur (Dans notre cas c'est adresse_fk) qui est vide, alors tu transformes cette valeur en null
 
-# Conversion des dates
+## Conversion des dates
 ```bash
 date_creation = STR_TO_DATE(@date_str, '%d.%m.%Y %H:%i')
 ```
-Cette ligne ci-dessus sert à convertir les dates que nous humains écrivont (Exemple : 22.11.2007 00:13) en date que MySQL comprends qui ressemble plus à (2007-11-22)
+Cette ligne ci-dessus sert à convertir les dates que nous humains écrivons (Exemple : 22.11.2007 00:13) en date que MySQL comprends qui ressemble plus à (2007-11-22)
 
-# Gestion des relations conditionnelles
+## Gestion des relations conditionnelles
 ```bash
 parent_ligne_fk = IF(
   TRIM(@parent_ligne_fk) REGEXP '^[0-9]+$',
@@ -231,10 +231,10 @@ parent_ligne_fk = IF(
   NULL
 );
 ```
-Cette ligne est utile pour faire la liaison entre les pizzas et le toppings ! (Exemple : Le topping champignons doit être lier à une pizza, mais si une pizza est seule alors il n'y a pas de toppings / parent)
-TRIM : Enlève les espaces inutiles autour du texte.
-REGEXP : Vérifie que le contenu est bien un nombre entier.
-CAST : Transforme le texte exemple "12" en vrai nombre 12 ! Mais si la case est vide ou non valide, on mets NULL
+Cette ligne est utile pour faire la liaison entre les pizzas et les toppings ! (Exemple : Le topping champignons doit être lier à une pizza, mais si une pizza est seule alors il n'y a pas de toppings / parent)<br>
+TRIM : Enlève les espaces inutiles autour du texte.<br>
+REGEXP : Vérifie que le contenu est bien un nombre entier.<br>
+CAST : Transforme le texte exemple "12" en vrai nombre 12 ! Mais si la case est vide ou non valide, on met NULL<br>
 Resumé : Si une pizza n'a pas de parents alors la case est null, Mais si un toppings est sur la pizza "10", alors le 10 est mis en Number et il est lié avec la pizza ! 
 
 ## 💾 Sauvegardes et restauration (Docker)
@@ -262,7 +262,7 @@ mysql -u root -proot db_pizzeria < backupFull.sql
 
 Afin d'approfondir le projet db, j'ai réalisé une application web qui simule une pizzeria.
 Nous pouvons faire une simulation de commande de pizza, et les entrées sont enregistrées dans la base de donnée.
-Le but est d'approfondir mes connaissance en javascript et de continuer le projet DB.
+Le but est d'approfondir mes connaissances en javascript et de continuer le projet DB.
 
 
 
